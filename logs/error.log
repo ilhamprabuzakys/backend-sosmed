@@ -1,0 +1,1654 @@
+[2024-06-26 10:51:12 +0700] [231303] [ERROR] Exception in ASGI application
+Traceback (most recent call last):
+  File "/home/intioptima/backend-sosmed/venv/lib/python3.10/site-packages/uvicorn/protocols/http/httptools_impl.py", line 399, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+  File "/home/intioptima/backend-sosmed/venv/lib/python3.10/site-packages/uvicorn/middleware/proxy_headers.py", line 70, in __call__
+    return await self.app(scope, receive, send)
+  File "/home/intioptima/backend-sosmed/venv/lib/python3.10/site-packages/fastapi/applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+  File "/home/intioptima/backend-sosmed/venv/lib/python3.10/site-packages/starlette/applications.py", line 123, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/intioptima/backend-sosmed/venv/lib/python3.10/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/home/intioptima/backend-sosmed/venv/lib/python3.10/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/home/intioptima/backend-sosmed/venv/lib/python3.10/site-packages/starlette/middleware/exceptions.py", line 65, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/home/intioptima/backend-sosmed/venv/lib/python3.10/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "/home/intioptima/backend-sosmed/venv/lib/python3.10/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/intioptima/backend-sosmed/venv/lib/python3.10/site-packages/starlette/routing.py", line 756, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/intioptima/backend-sosmed/venv/lib/python3.10/site-packages/starlette/routing.py", line 776, in app
+    await route.handle(scope, receive, send)
+  File "/home/intioptima/backend-sosmed/venv/lib/python3.10/site-packages/starlette/routing.py", line 297, in handle
+    await self.app(scope, receive, send)
+  File "/home/intioptima/backend-sosmed/venv/lib/python3.10/site-packages/starlette/routing.py", line 77, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/home/intioptima/backend-sosmed/venv/lib/python3.10/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "/home/intioptima/backend-sosmed/venv/lib/python3.10/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/intioptima/backend-sosmed/venv/lib/python3.10/site-packages/starlette/routing.py", line 72, in app
+    response = await func(request)
+  File "/home/intioptima/backend-sosmed/venv/lib/python3.10/site-packages/fastapi/routing.py", line 278, in app
+    raw_response = await run_endpoint_function(
+  File "/home/intioptima/backend-sosmed/venv/lib/python3.10/site-packages/fastapi/routing.py", line 191, in run_endpoint_function
+    return await dependant.call(**values)
+  File "/home/intioptima/backend-sosmed/routes/socmed.py", line 63, in get_content
+    response = await client.get(url, headers=headers, timeout=None)
+  File "/home/intioptima/backend-sosmed/routes/socmed.py", line 90, in get_parsed_content
+    user = data['user']['username']
+KeyError: 'user'
+[2024-06-26 10:53:34 +0700] [231300] [INFO] Handling signal: term
+[2024-06-26 10:53:34 +0700] [231303] [INFO] Shutting down
+[2024-06-26 10:53:34 +0700] [231304] [INFO] Shutting down
+[2024-06-26 10:53:34 +0700] [231305] [INFO] Shutting down
+[2024-06-26 10:53:34 +0700] [231304] [INFO] Error while closing socket [Errno 9] Bad file descriptor
+[2024-06-26 10:53:34 +0700] [231305] [INFO] Error while closing socket [Errno 9] Bad file descriptor
+[2024-06-26 10:53:34 +0700] [231303] [INFO] Error while closing socket [Errno 9] Bad file descriptor
+[2024-06-26 10:53:35 +0700] [231304] [INFO] Waiting for application shutdown.
+[2024-06-26 10:53:35 +0700] [231305] [INFO] Waiting for application shutdown.
+[2024-06-26 10:53:35 +0700] [231304] [INFO] Application shutdown complete.
+[2024-06-26 10:53:35 +0700] [231305] [INFO] Application shutdown complete.
+[2024-06-26 10:53:35 +0700] [231304] [INFO] Finished server process [231304]
+[2024-06-26 10:53:35 +0700] [231305] [INFO] Finished server process [231305]
+[2024-06-26 10:53:35 +0700] [231303] [INFO] Waiting for application shutdown.
+[2024-06-26 10:53:35 +0700] [231303] [INFO] Application shutdown complete.
+[2024-06-26 10:53:35 +0700] [231303] [INFO] Finished server process [231303]
+[2024-06-26 10:53:35 +0700] [231300] [ERROR] Worker (pid:231303) was sent SIGTERM!
+[2024-06-26 10:53:35 +0700] [231300] [ERROR] Worker (pid:231304) was sent SIGTERM!
+[2024-06-26 10:53:35 +0700] [231300] [ERROR] Worker (pid:231305) was sent SIGTERM!
+[2024-06-26 10:53:35 +0700] [231300] [INFO] Shutting down: Master
+[2024-06-26 10:53:35 +0700] [232446] [DEBUG] Current configuration:
+  config: gunicorn.conf.py
+  wsgi_app: None
+  bind: ['127.0.0.1:9001']
+  backlog: 2048
+  workers: 3
+  worker_class: uvicorn.workers.UvicornWorker
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  print_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /home/intioptima/backend-sosmed
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 1000
+  group: 33
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: /home/intioptima/backend-sosmed/logs/access.log
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: /home/intioptima/backend-sosmed/logs/error.log
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  logconfig_json: None
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: main:app
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7f0398debd00>
+  on_reload: <function OnReload.on_reload at 0x7f0398debe20>
+  when_ready: <function WhenReady.when_ready at 0x7f0398debf40>
+  pre_fork: <function Prefork.pre_fork at 0x7f0398e100d0>
+  post_fork: <function Postfork.post_fork at 0x7f0398e101f0>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7f0398e10310>
+  worker_int: <function WorkerInt.worker_int at 0x7f0398e10430>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7f0398e10550>
+  pre_exec: <function PreExec.pre_exec at 0x7f0398e10670>
+  pre_request: <function PreRequest.pre_request at 0x7f0398e10790>
+  post_request: <function PostRequest.post_request at 0x7f0398e10820>
+  child_exit: <function ChildExit.child_exit at 0x7f0398e10940>
+  worker_exit: <function WorkerExit.worker_exit at 0x7f0398e10a60>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7f0398e10b80>
+  on_exit: <function OnExit.on_exit at 0x7f0398e10ca0>
+  ssl_context: <function NewSSLContext.ssl_context at 0x7f0398e10dc0>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+  permit_unconventional_http_method: False
+  permit_unconventional_http_version: False
+  casefold_http_method: False
+  header_map: drop
+  tolerate_dangerous_framing: False
+[2024-06-26 10:53:35 +0700] [232446] [INFO] Starting gunicorn 22.0.0
+[2024-06-26 10:53:35 +0700] [232446] [DEBUG] Arbiter booted
+[2024-06-26 10:53:35 +0700] [232446] [INFO] Listening at: http://127.0.0.1:9001 (232446)
+[2024-06-26 10:53:35 +0700] [232446] [INFO] Using worker: uvicorn.workers.UvicornWorker
+[2024-06-26 10:53:35 +0700] [232449] [INFO] Booting worker with pid: 232449
+[2024-06-26 10:53:35 +0700] [232460] [INFO] Booting worker with pid: 232460
+[2024-06-26 10:53:35 +0700] [232461] [INFO] Booting worker with pid: 232461
+[2024-06-26 10:53:35 +0700] [232446] [DEBUG] 3 workers
+[2024-06-26 10:53:38 +0700] [232449] [INFO] Started server process [232449]
+[2024-06-26 10:53:38 +0700] [232449] [INFO] Waiting for application startup.
+[2024-06-26 10:53:38 +0700] [232449] [INFO] Application startup complete.
+[2024-06-26 10:53:38 +0700] [232461] [INFO] Started server process [232461]
+[2024-06-26 10:53:38 +0700] [232461] [INFO] Waiting for application startup.
+[2024-06-26 10:53:38 +0700] [232461] [INFO] Application startup complete.
+[2024-06-26 10:53:38 +0700] [232460] [INFO] Started server process [232460]
+[2024-06-26 10:53:38 +0700] [232460] [INFO] Waiting for application startup.
+[2024-06-26 10:53:38 +0700] [232460] [INFO] Application startup complete.
+[2024-06-26 10:54:06 +0700] [232446] [INFO] Handling signal: term
+[2024-06-26 10:54:06 +0700] [232449] [INFO] Shutting down
+[2024-06-26 10:54:06 +0700] [232449] [INFO] Error while closing socket [Errno 9] Bad file descriptor
+[2024-06-26 10:54:06 +0700] [232461] [INFO] Shutting down
+[2024-06-26 10:54:06 +0700] [232461] [INFO] Error while closing socket [Errno 9] Bad file descriptor
+[2024-06-26 10:54:06 +0700] [232460] [INFO] Shutting down
+[2024-06-26 10:54:06 +0700] [232460] [INFO] Error while closing socket [Errno 9] Bad file descriptor
+[2024-06-26 10:54:07 +0700] [232449] [INFO] Waiting for application shutdown.
+[2024-06-26 10:54:07 +0700] [232449] [INFO] Application shutdown complete.
+[2024-06-26 10:54:07 +0700] [232449] [INFO] Finished server process [232449]
+[2024-06-26 10:54:07 +0700] [232461] [INFO] Waiting for application shutdown.
+[2024-06-26 10:54:07 +0700] [232461] [INFO] Application shutdown complete.
+[2024-06-26 10:54:07 +0700] [232461] [INFO] Finished server process [232461]
+[2024-06-26 10:54:07 +0700] [232446] [ERROR] Worker (pid:232449) was sent SIGTERM!
+[2024-06-26 10:54:07 +0700] [232460] [INFO] Waiting for application shutdown.
+[2024-06-26 10:54:07 +0700] [232460] [INFO] Application shutdown complete.
+[2024-06-26 10:54:07 +0700] [232460] [INFO] Finished server process [232460]
+[2024-06-26 10:54:07 +0700] [232446] [ERROR] Worker (pid:232461) was sent SIGTERM!
+[2024-06-26 10:54:07 +0700] [232446] [ERROR] Worker (pid:232460) was sent SIGTERM!
+[2024-06-26 10:54:07 +0700] [232446] [INFO] Shutting down: Master
+[2024-06-26 10:54:07 +0700] [232618] [DEBUG] Current configuration:
+  config: gunicorn.conf.py
+  wsgi_app: None
+  bind: ['127.0.0.1:9001']
+  backlog: 2048
+  workers: 3
+  worker_class: uvicorn.workers.UvicornWorker
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  print_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /home/intioptima/backend-sosmed
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 1000
+  group: 33
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: /home/intioptima/backend-sosmed/logs/access.log
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: /home/intioptima/backend-sosmed/logs/error.log
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  logconfig_json: None
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: main:app
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7fef0e867d00>
+  on_reload: <function OnReload.on_reload at 0x7fef0e867e20>
+  when_ready: <function WhenReady.when_ready at 0x7fef0e867f40>
+  pre_fork: <function Prefork.pre_fork at 0x7fef0e88c0d0>
+  post_fork: <function Postfork.post_fork at 0x7fef0e88c1f0>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7fef0e88c310>
+  worker_int: <function WorkerInt.worker_int at 0x7fef0e88c430>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7fef0e88c550>
+  pre_exec: <function PreExec.pre_exec at 0x7fef0e88c670>
+  pre_request: <function PreRequest.pre_request at 0x7fef0e88c790>
+  post_request: <function PostRequest.post_request at 0x7fef0e88c820>
+  child_exit: <function ChildExit.child_exit at 0x7fef0e88c940>
+  worker_exit: <function WorkerExit.worker_exit at 0x7fef0e88ca60>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7fef0e88cb80>
+  on_exit: <function OnExit.on_exit at 0x7fef0e88cca0>
+  ssl_context: <function NewSSLContext.ssl_context at 0x7fef0e88cdc0>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+  permit_unconventional_http_method: False
+  permit_unconventional_http_version: False
+  casefold_http_method: False
+  header_map: drop
+  tolerate_dangerous_framing: False
+[2024-06-26 10:54:07 +0700] [232618] [INFO] Starting gunicorn 22.0.0
+[2024-06-26 10:54:07 +0700] [232618] [DEBUG] Arbiter booted
+[2024-06-26 10:54:07 +0700] [232618] [INFO] Listening at: http://127.0.0.1:9001 (232618)
+[2024-06-26 10:54:07 +0700] [232618] [INFO] Using worker: uvicorn.workers.UvicornWorker
+[2024-06-26 10:54:07 +0700] [232621] [INFO] Booting worker with pid: 232621
+[2024-06-26 10:54:07 +0700] [232622] [INFO] Booting worker with pid: 232622
+[2024-06-26 10:54:07 +0700] [232623] [INFO] Booting worker with pid: 232623
+[2024-06-26 10:54:07 +0700] [232618] [DEBUG] 3 workers
+[2024-06-26 10:54:10 +0700] [232623] [INFO] Started server process [232623]
+[2024-06-26 10:54:10 +0700] [232623] [INFO] Waiting for application startup.
+[2024-06-26 10:54:10 +0700] [232623] [INFO] Application startup complete.
+[2024-06-26 10:54:10 +0700] [232622] [INFO] Started server process [232622]
+[2024-06-26 10:54:10 +0700] [232622] [INFO] Waiting for application startup.
+[2024-06-26 10:54:10 +0700] [232622] [INFO] Application startup complete.
+[2024-06-26 10:54:10 +0700] [232621] [INFO] Started server process [232621]
+[2024-06-26 10:54:10 +0700] [232621] [INFO] Waiting for application startup.
+[2024-06-26 10:54:10 +0700] [232621] [INFO] Application startup complete.
+[2024-06-26 10:54:57 +0700] [232618] [INFO] Handling signal: term
+[2024-06-26 10:54:57 +0700] [232622] [INFO] Shutting down
+[2024-06-26 10:54:57 +0700] [232623] [INFO] Shutting down
+[2024-06-26 10:54:57 +0700] [232622] [INFO] Error while closing socket [Errno 9] Bad file descriptor
+[2024-06-26 10:54:57 +0700] [232623] [INFO] Error while closing socket [Errno 9] Bad file descriptor
+[2024-06-26 10:54:57 +0700] [232621] [INFO] Shutting down
+[2024-06-26 10:54:57 +0700] [232621] [INFO] Error while closing socket [Errno 9] Bad file descriptor
+[2024-06-26 10:54:57 +0700] [232621] [INFO] Waiting for application shutdown.
+[2024-06-26 10:54:57 +0700] [232621] [INFO] Application shutdown complete.
+[2024-06-26 10:54:57 +0700] [232621] [INFO] Finished server process [232621]
+[2024-06-26 10:54:57 +0700] [232623] [INFO] Waiting for application shutdown.
+[2024-06-26 10:54:57 +0700] [232622] [INFO] Waiting for application shutdown.
+[2024-06-26 10:54:57 +0700] [232622] [INFO] Application shutdown complete.
+[2024-06-26 10:54:57 +0700] [232622] [INFO] Finished server process [232622]
+[2024-06-26 10:54:57 +0700] [232623] [INFO] Application shutdown complete.
+[2024-06-26 10:54:57 +0700] [232623] [INFO] Finished server process [232623]
+[2024-06-26 10:54:57 +0700] [232618] [ERROR] Worker (pid:232623) was sent SIGTERM!
+[2024-06-26 10:54:57 +0700] [232618] [ERROR] Worker (pid:232621) was sent SIGTERM!
+[2024-06-26 10:54:57 +0700] [232618] [ERROR] Worker (pid:232622) was sent SIGTERM!
+[2024-06-26 10:54:57 +0700] [232618] [INFO] Shutting down: Master
+[2024-06-26 10:54:58 +0700] [232747] [DEBUG] Current configuration:
+  config: gunicorn.conf.py
+  wsgi_app: None
+  bind: ['127.0.0.1:9001']
+  backlog: 2048
+  workers: 3
+  worker_class: uvicorn.workers.UvicornWorker
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  print_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /home/intioptima/backend-sosmed
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 1000
+  group: 33
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: /home/intioptima/backend-sosmed/logs/access.log
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: /home/intioptima/backend-sosmed/logs/error.log
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  logconfig_json: None
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: main:app
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7fe6cc2c7d00>
+  on_reload: <function OnReload.on_reload at 0x7fe6cc2c7e20>
+  when_ready: <function WhenReady.when_ready at 0x7fe6cc2c7f40>
+  pre_fork: <function Prefork.pre_fork at 0x7fe6cc2ec0d0>
+  post_fork: <function Postfork.post_fork at 0x7fe6cc2ec1f0>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7fe6cc2ec310>
+  worker_int: <function WorkerInt.worker_int at 0x7fe6cc2ec430>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7fe6cc2ec550>
+  pre_exec: <function PreExec.pre_exec at 0x7fe6cc2ec670>
+  pre_request: <function PreRequest.pre_request at 0x7fe6cc2ec790>
+  post_request: <function PostRequest.post_request at 0x7fe6cc2ec820>
+  child_exit: <function ChildExit.child_exit at 0x7fe6cc2ec940>
+  worker_exit: <function WorkerExit.worker_exit at 0x7fe6cc2eca60>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7fe6cc2ecb80>
+  on_exit: <function OnExit.on_exit at 0x7fe6cc2ecca0>
+  ssl_context: <function NewSSLContext.ssl_context at 0x7fe6cc2ecdc0>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+  permit_unconventional_http_method: False
+  permit_unconventional_http_version: False
+  casefold_http_method: False
+  header_map: drop
+  tolerate_dangerous_framing: False
+[2024-06-26 10:54:58 +0700] [232747] [INFO] Starting gunicorn 22.0.0
+[2024-06-26 10:54:58 +0700] [232747] [DEBUG] Arbiter booted
+[2024-06-26 10:54:58 +0700] [232747] [INFO] Listening at: http://127.0.0.1:9001 (232747)
+[2024-06-26 10:54:58 +0700] [232747] [INFO] Using worker: uvicorn.workers.UvicornWorker
+[2024-06-26 10:54:58 +0700] [232750] [INFO] Booting worker with pid: 232750
+[2024-06-26 10:54:58 +0700] [232751] [INFO] Booting worker with pid: 232751
+[2024-06-26 10:54:58 +0700] [232747] [DEBUG] 3 workers
+[2024-06-26 10:54:58 +0700] [232752] [INFO] Booting worker with pid: 232752
+[2024-06-26 10:55:01 +0700] [232750] [INFO] Started server process [232750]
+[2024-06-26 10:55:01 +0700] [232750] [INFO] Waiting for application startup.
+[2024-06-26 10:55:01 +0700] [232750] [INFO] Application startup complete.
+[2024-06-26 10:55:01 +0700] [232751] [INFO] Started server process [232751]
+[2024-06-26 10:55:01 +0700] [232751] [INFO] Waiting for application startup.
+[2024-06-26 10:55:01 +0700] [232751] [INFO] Application startup complete.
+[2024-06-26 10:55:01 +0700] [232752] [INFO] Started server process [232752]
+[2024-06-26 10:55:01 +0700] [232752] [INFO] Waiting for application startup.
+[2024-06-26 10:55:01 +0700] [232752] [INFO] Application startup complete.
+[2024-06-26 11:01:21 +0700] [232747] [INFO] Handling signal: term
+[2024-06-26 11:01:21 +0700] [232750] [INFO] Shutting down
+[2024-06-26 11:01:21 +0700] [232750] [INFO] Error while closing socket [Errno 9] Bad file descriptor
+[2024-06-26 11:01:21 +0700] [232752] [INFO] Shutting down
+[2024-06-26 11:01:21 +0700] [232752] [INFO] Error while closing socket [Errno 9] Bad file descriptor
+[2024-06-26 11:01:21 +0700] [232751] [INFO] Shutting down
+[2024-06-26 11:01:21 +0700] [232751] [INFO] Error while closing socket [Errno 9] Bad file descriptor
+[2024-06-26 11:01:21 +0700] [232750] [INFO] Waiting for application shutdown.
+[2024-06-26 11:01:21 +0700] [232750] [INFO] Application shutdown complete.
+[2024-06-26 11:01:21 +0700] [232750] [INFO] Finished server process [232750]
+[2024-06-26 11:01:21 +0700] [232752] [INFO] Waiting for application shutdown.
+[2024-06-26 11:01:21 +0700] [232752] [INFO] Application shutdown complete.
+[2024-06-26 11:01:21 +0700] [232752] [INFO] Finished server process [232752]
+[2024-06-26 11:01:21 +0700] [232751] [INFO] Waiting for application shutdown.
+[2024-06-26 11:01:21 +0700] [232751] [INFO] Application shutdown complete.
+[2024-06-26 11:01:21 +0700] [232751] [INFO] Finished server process [232751]
+[2024-06-26 11:01:21 +0700] [232747] [ERROR] Worker (pid:232752) was sent SIGTERM!
+[2024-06-26 11:01:21 +0700] [232747] [ERROR] Worker (pid:232751) was sent SIGTERM!
+[2024-06-26 11:01:21 +0700] [232747] [ERROR] Worker (pid:232750) was sent SIGTERM!
+[2024-06-26 11:01:22 +0700] [232747] [INFO] Shutting down: Master
+[2024-06-26 11:01:33 +0700] [233752] [DEBUG] Current configuration:
+  config: gunicorn.conf.py
+  wsgi_app: None
+  bind: ['127.0.0.1:9001']
+  backlog: 2048
+  workers: 3
+  worker_class: uvicorn.workers.UvicornWorker
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: True
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  print_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /home/intioptima/backend-sosmed
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 1000
+  group: 33
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: /home/intioptima/backend-sosmed/logs/access.log
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: /home/intioptima/backend-sosmed/logs/error.log
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  logconfig_json: None
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: main:app
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7f264dbefd00>
+  on_reload: <function OnReload.on_reload at 0x7f264dbefe20>
+  when_ready: <function WhenReady.when_ready at 0x7f264dbeff40>
+  pre_fork: <function Prefork.pre_fork at 0x7f264dc140d0>
+  post_fork: <function Postfork.post_fork at 0x7f264dc141f0>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7f264dc14310>
+  worker_int: <function WorkerInt.worker_int at 0x7f264dc14430>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7f264dc14550>
+  pre_exec: <function PreExec.pre_exec at 0x7f264dc14670>
+  pre_request: <function PreRequest.pre_request at 0x7f264dc14790>
+  post_request: <function PostRequest.post_request at 0x7f264dc14820>
+  child_exit: <function ChildExit.child_exit at 0x7f264dc14940>
+  worker_exit: <function WorkerExit.worker_exit at 0x7f264dc14a60>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7f264dc14b80>
+  on_exit: <function OnExit.on_exit at 0x7f264dc14ca0>
+  ssl_context: <function NewSSLContext.ssl_context at 0x7f264dc14dc0>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+  permit_unconventional_http_method: False
+  permit_unconventional_http_version: False
+  casefold_http_method: False
+  header_map: drop
+  tolerate_dangerous_framing: False
+[2024-06-26 11:01:33 +0700] [233752] [INFO] Starting gunicorn 22.0.0
+[2024-06-26 11:01:33 +0700] [233752] [DEBUG] Arbiter booted
+[2024-06-26 11:01:33 +0700] [233752] [INFO] Listening at: http://127.0.0.1:9001 (233752)
+[2024-06-26 11:01:33 +0700] [233752] [INFO] Using worker: uvicorn.workers.UvicornWorker
+[2024-06-26 11:01:33 +0700] [233754] [INFO] Booting worker with pid: 233754
+[2024-06-26 11:01:33 +0700] [233755] [INFO] Booting worker with pid: 233755
+[2024-06-26 11:01:33 +0700] [233752] [DEBUG] 3 workers
+[2024-06-26 11:01:33 +0700] [233756] [INFO] Booting worker with pid: 233756
+[2024-06-26 11:01:36 +0700] [233754] [INFO] Started server process [233754]
+[2024-06-26 11:01:36 +0700] [233754] [INFO] Waiting for application startup.
+[2024-06-26 11:01:36 +0700] [233754] [INFO] Application startup complete.
+[2024-06-26 11:01:36 +0700] [233755] [INFO] Started server process [233755]
+[2024-06-26 11:01:36 +0700] [233755] [INFO] Waiting for application startup.
+[2024-06-26 11:01:36 +0700] [233755] [INFO] Application startup complete.
+[2024-06-26 11:01:36 +0700] [233756] [INFO] Started server process [233756]
+[2024-06-26 11:01:36 +0700] [233756] [INFO] Waiting for application startup.
+[2024-06-26 11:01:36 +0700] [233756] [INFO] Application startup complete.
+[2024-06-26 11:04:28 +0700] [233756] [INFO] Worker reloading: /home/intioptima/backend-sosmed/routes/socmed.py modified
+[2024-06-26 11:04:29 +0700] [233754] [INFO] Worker reloading: /home/intioptima/backend-sosmed/routes/socmed.py modified
+[2024-06-26 11:04:29 +0700] [233755] [INFO] Worker reloading: /home/intioptima/backend-sosmed/routes/socmed.py modified
+[2024-06-26 11:04:42 +0700] [233752] [INFO] Handling signal: term
+[2024-06-26 11:04:42 +0700] [233754] [INFO] Shutting down
+[2024-06-26 11:04:42 +0700] [233754] [INFO] Error while closing socket [Errno 9] Bad file descriptor
+[2024-06-26 11:04:42 +0700] [233756] [INFO] Shutting down
+[2024-06-26 11:04:42 +0700] [233756] [INFO] Error while closing socket [Errno 9] Bad file descriptor
+[2024-06-26 11:04:42 +0700] [233755] [INFO] Shutting down
+[2024-06-26 11:04:42 +0700] [233755] [INFO] Error while closing socket [Errno 9] Bad file descriptor
+[2024-06-26 11:04:42 +0700] [233754] [INFO] Waiting for application shutdown.
+[2024-06-26 11:04:42 +0700] [233754] [INFO] Application shutdown complete.
+[2024-06-26 11:04:42 +0700] [233754] [INFO] Finished server process [233754]
+[2024-06-26 11:04:42 +0700] [233752] [ERROR] Worker (pid:233754) was sent SIGTERM!
+[2024-06-26 11:04:42 +0700] [233756] [INFO] Waiting for application shutdown.
+[2024-06-26 11:04:42 +0700] [233756] [INFO] Application shutdown complete.
+[2024-06-26 11:04:42 +0700] [233756] [INFO] Finished server process [233756]
+[2024-06-26 11:04:42 +0700] [233755] [INFO] Waiting for application shutdown.
+[2024-06-26 11:04:42 +0700] [233755] [INFO] Application shutdown complete.
+[2024-06-26 11:04:42 +0700] [233755] [INFO] Finished server process [233755]
+[2024-06-26 11:04:42 +0700] [233752] [ERROR] Worker (pid:233756) was sent SIGTERM!
+[2024-06-26 11:04:43 +0700] [233752] [ERROR] Worker (pid:233755) was sent SIGTERM!
+[2024-06-26 11:04:43 +0700] [233752] [INFO] Shutting down: Master
+[2024-06-26 11:04:43 +0700] [233940] [DEBUG] Current configuration:
+  config: gunicorn.conf.py
+  wsgi_app: None
+  bind: ['127.0.0.1:9001']
+  backlog: 2048
+  workers: 3
+  worker_class: uvicorn.workers.UvicornWorker
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: True
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  print_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /home/intioptima/backend-sosmed
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 1000
+  group: 33
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: /home/intioptima/backend-sosmed/logs/access.log
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: /home/intioptima/backend-sosmed/logs/error.log
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  logconfig_json: None
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: main:app
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7f8b840d3d00>
+  on_reload: <function OnReload.on_reload at 0x7f8b840d3e20>
+  when_ready: <function WhenReady.when_ready at 0x7f8b840d3f40>
+  pre_fork: <function Prefork.pre_fork at 0x7f8b840f80d0>
+  post_fork: <function Postfork.post_fork at 0x7f8b840f81f0>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7f8b840f8310>
+  worker_int: <function WorkerInt.worker_int at 0x7f8b840f8430>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7f8b840f8550>
+  pre_exec: <function PreExec.pre_exec at 0x7f8b840f8670>
+  pre_request: <function PreRequest.pre_request at 0x7f8b840f8790>
+  post_request: <function PostRequest.post_request at 0x7f8b840f8820>
+  child_exit: <function ChildExit.child_exit at 0x7f8b840f8940>
+  worker_exit: <function WorkerExit.worker_exit at 0x7f8b840f8a60>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7f8b840f8b80>
+  on_exit: <function OnExit.on_exit at 0x7f8b840f8ca0>
+  ssl_context: <function NewSSLContext.ssl_context at 0x7f8b840f8dc0>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+  permit_unconventional_http_method: False
+  permit_unconventional_http_version: False
+  casefold_http_method: False
+  header_map: drop
+  tolerate_dangerous_framing: False
+[2024-06-26 11:04:43 +0700] [233940] [INFO] Starting gunicorn 22.0.0
+[2024-06-26 11:04:43 +0700] [233940] [DEBUG] Arbiter booted
+[2024-06-26 11:04:43 +0700] [233940] [INFO] Listening at: http://127.0.0.1:9001 (233940)
+[2024-06-26 11:04:43 +0700] [233940] [INFO] Using worker: uvicorn.workers.UvicornWorker
+[2024-06-26 11:04:43 +0700] [233942] [INFO] Booting worker with pid: 233942
+[2024-06-26 11:04:43 +0700] [233943] [INFO] Booting worker with pid: 233943
+[2024-06-26 11:04:43 +0700] [233944] [INFO] Booting worker with pid: 233944
+[2024-06-26 11:04:43 +0700] [233940] [DEBUG] 3 workers
+[2024-06-26 11:04:46 +0700] [233944] [INFO] Started server process [233944]
+[2024-06-26 11:04:46 +0700] [233944] [INFO] Waiting for application startup.
+[2024-06-26 11:04:46 +0700] [233944] [INFO] Application startup complete.
+[2024-06-26 11:04:46 +0700] [233942] [INFO] Started server process [233942]
+[2024-06-26 11:04:46 +0700] [233942] [INFO] Waiting for application startup.
+[2024-06-26 11:04:46 +0700] [233942] [INFO] Application startup complete.
+[2024-06-26 11:04:46 +0700] [233943] [INFO] Started server process [233943]
+[2024-06-26 11:04:46 +0700] [233943] [INFO] Waiting for application startup.
+[2024-06-26 11:04:46 +0700] [233943] [INFO] Application startup complete.
+[2024-06-26 11:07:08 +0700] [233940] [INFO] Handling signal: term
+[2024-06-26 11:07:08 +0700] [233944] [INFO] Shutting down
+[2024-06-26 11:07:08 +0700] [233944] [INFO] Error while closing socket [Errno 9] Bad file descriptor
+[2024-06-26 11:07:08 +0700] [233943] [INFO] Shutting down
+[2024-06-26 11:07:08 +0700] [233943] [INFO] Error while closing socket [Errno 9] Bad file descriptor
+[2024-06-26 11:07:08 +0700] [233942] [INFO] Shutting down
+[2024-06-26 11:07:08 +0700] [233942] [INFO] Error while closing socket [Errno 9] Bad file descriptor
+[2024-06-26 11:07:08 +0700] [233944] [INFO] Waiting for application shutdown.
+[2024-06-26 11:07:08 +0700] [233944] [INFO] Application shutdown complete.
+[2024-06-26 11:07:08 +0700] [233944] [INFO] Finished server process [233944]
+[2024-06-26 11:07:08 +0700] [233940] [ERROR] Worker (pid:233944) was sent SIGTERM!
+[2024-06-26 11:07:08 +0700] [233943] [INFO] Waiting for application shutdown.
+[2024-06-26 11:07:08 +0700] [233943] [INFO] Application shutdown complete.
+[2024-06-26 11:07:08 +0700] [233943] [INFO] Finished server process [233943]
+[2024-06-26 11:07:08 +0700] [233942] [INFO] Waiting for application shutdown.
+[2024-06-26 11:07:08 +0700] [233942] [INFO] Application shutdown complete.
+[2024-06-26 11:07:08 +0700] [233942] [INFO] Finished server process [233942]
+[2024-06-26 11:07:08 +0700] [233940] [ERROR] Worker (pid:233943) was sent SIGTERM!
+[2024-06-26 11:07:08 +0700] [233940] [ERROR] Worker (pid:233942) was sent SIGTERM!
+[2024-06-26 11:07:08 +0700] [233940] [INFO] Shutting down: Master
+[2024-06-26 11:07:09 +0700] [234462] [DEBUG] Current configuration:
+  config: gunicorn.conf.py
+  wsgi_app: None
+  bind: ['127.0.0.1:9001']
+  backlog: 2048
+  workers: 3
+  worker_class: uvicorn.workers.UvicornWorker
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: True
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  print_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /home/intioptima/backend-sosmed
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 1000
+  group: 33
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: /home/intioptima/backend-sosmed/logs/access.log
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: /home/intioptima/backend-sosmed/logs/error.log
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  logconfig_json: None
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: main:app
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7f390ba4bd00>
+  on_reload: <function OnReload.on_reload at 0x7f390ba4be20>
+  when_ready: <function WhenReady.when_ready at 0x7f390ba4bf40>
+  pre_fork: <function Prefork.pre_fork at 0x7f390ba700d0>
+  post_fork: <function Postfork.post_fork at 0x7f390ba701f0>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7f390ba70310>
+  worker_int: <function WorkerInt.worker_int at 0x7f390ba70430>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7f390ba70550>
+  pre_exec: <function PreExec.pre_exec at 0x7f390ba70670>
+  pre_request: <function PreRequest.pre_request at 0x7f390ba70790>
+  post_request: <function PostRequest.post_request at 0x7f390ba70820>
+  child_exit: <function ChildExit.child_exit at 0x7f390ba70940>
+  worker_exit: <function WorkerExit.worker_exit at 0x7f390ba70a60>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7f390ba70b80>
+  on_exit: <function OnExit.on_exit at 0x7f390ba70ca0>
+  ssl_context: <function NewSSLContext.ssl_context at 0x7f390ba70dc0>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+  permit_unconventional_http_method: False
+  permit_unconventional_http_version: False
+  casefold_http_method: False
+  header_map: drop
+  tolerate_dangerous_framing: False
+[2024-06-26 11:07:09 +0700] [234462] [INFO] Starting gunicorn 22.0.0
+[2024-06-26 11:07:09 +0700] [234462] [DEBUG] Arbiter booted
+[2024-06-26 11:07:09 +0700] [234462] [INFO] Listening at: http://127.0.0.1:9001 (234462)
+[2024-06-26 11:07:09 +0700] [234462] [INFO] Using worker: uvicorn.workers.UvicornWorker
+[2024-06-26 11:07:09 +0700] [234465] [INFO] Booting worker with pid: 234465
+[2024-06-26 11:07:09 +0700] [234466] [INFO] Booting worker with pid: 234466
+[2024-06-26 11:07:09 +0700] [234467] [INFO] Booting worker with pid: 234467
+[2024-06-26 11:07:09 +0700] [234462] [DEBUG] 3 workers
+[2024-06-26 11:07:12 +0700] [234466] [INFO] Started server process [234466]
+[2024-06-26 11:07:12 +0700] [234466] [INFO] Waiting for application startup.
+[2024-06-26 11:07:12 +0700] [234466] [INFO] Application startup complete.
+[2024-06-26 11:07:12 +0700] [234465] [INFO] Started server process [234465]
+[2024-06-26 11:07:12 +0700] [234465] [INFO] Waiting for application startup.
+[2024-06-26 11:07:12 +0700] [234465] [INFO] Application startup complete.
+[2024-06-26 11:07:12 +0700] [234467] [INFO] Started server process [234467]
+[2024-06-26 11:07:12 +0700] [234467] [INFO] Waiting for application startup.
+[2024-06-26 11:07:12 +0700] [234467] [INFO] Application startup complete.
+[2024-06-26 11:07:28 +0700] [234466] [INFO] Worker reloading: /home/intioptima/backend-sosmed/routes/socmed.py modified
+[2024-06-26 11:07:28 +0700] [234465] [INFO] Worker reloading: /home/intioptima/backend-sosmed/routes/socmed.py modified
+[2024-06-26 11:07:28 +0700] [234467] [INFO] Worker reloading: /home/intioptima/backend-sosmed/routes/socmed.py modified
+[2024-06-26 11:10:09 +0700] [234462] [INFO] Handling signal: term
+[2024-06-26 11:10:09 +0700] [234466] [INFO] Shutting down
+[2024-06-26 11:10:09 +0700] [234466] [INFO] Error while closing socket [Errno 9] Bad file descriptor
+[2024-06-26 11:10:09 +0700] [234467] [INFO] Shutting down
+[2024-06-26 11:10:09 +0700] [234467] [INFO] Error while closing socket [Errno 9] Bad file descriptor
+[2024-06-26 11:10:09 +0700] [234465] [INFO] Shutting down
+[2024-06-26 11:10:09 +0700] [234465] [INFO] Error while closing socket [Errno 9] Bad file descriptor
+[2024-06-26 11:10:09 +0700] [234466] [INFO] Waiting for application shutdown.
+[2024-06-26 11:10:09 +0700] [234466] [INFO] Application shutdown complete.
+[2024-06-26 11:10:09 +0700] [234466] [INFO] Finished server process [234466]
+[2024-06-26 11:10:09 +0700] [234462] [ERROR] Worker (pid:234466) was sent SIGTERM!
+[2024-06-26 11:10:09 +0700] [234467] [INFO] Waiting for application shutdown.
+[2024-06-26 11:10:09 +0700] [234467] [INFO] Application shutdown complete.
+[2024-06-26 11:10:09 +0700] [234467] [INFO] Finished server process [234467]
+[2024-06-26 11:10:09 +0700] [234462] [ERROR] Worker (pid:234467) was sent SIGTERM!
+[2024-06-26 11:10:09 +0700] [234465] [INFO] Waiting for application shutdown.
+[2024-06-26 11:10:09 +0700] [234465] [INFO] Application shutdown complete.
+[2024-06-26 11:10:09 +0700] [234465] [INFO] Finished server process [234465]
+[2024-06-26 11:10:09 +0700] [234462] [ERROR] Worker (pid:234465) was sent SIGTERM!
+[2024-06-26 11:10:09 +0700] [234462] [INFO] Shutting down: Master
+[2024-06-26 11:10:09 +0700] [234743] [DEBUG] Current configuration:
+  config: gunicorn.conf.py
+  wsgi_app: None
+  bind: ['127.0.0.1:9001']
+  backlog: 2048
+  workers: 3
+  worker_class: uvicorn.workers.UvicornWorker
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: True
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  print_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /home/intioptima/backend-sosmed
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 1000
+  group: 33
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: /home/intioptima/backend-sosmed/logs/access.log
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: /home/intioptima/backend-sosmed/logs/error.log
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  logconfig_json: None
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: main:app
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7f4fe2503d00>
+  on_reload: <function OnReload.on_reload at 0x7f4fe2503e20>
+  when_ready: <function WhenReady.when_ready at 0x7f4fe2503f40>
+  pre_fork: <function Prefork.pre_fork at 0x7f4fe25280d0>
+  post_fork: <function Postfork.post_fork at 0x7f4fe25281f0>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7f4fe2528310>
+  worker_int: <function WorkerInt.worker_int at 0x7f4fe2528430>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7f4fe2528550>
+  pre_exec: <function PreExec.pre_exec at 0x7f4fe2528670>
+  pre_request: <function PreRequest.pre_request at 0x7f4fe2528790>
+  post_request: <function PostRequest.post_request at 0x7f4fe2528820>
+  child_exit: <function ChildExit.child_exit at 0x7f4fe2528940>
+  worker_exit: <function WorkerExit.worker_exit at 0x7f4fe2528a60>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7f4fe2528b80>
+  on_exit: <function OnExit.on_exit at 0x7f4fe2528ca0>
+  ssl_context: <function NewSSLContext.ssl_context at 0x7f4fe2528dc0>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+  permit_unconventional_http_method: False
+  permit_unconventional_http_version: False
+  casefold_http_method: False
+  header_map: drop
+  tolerate_dangerous_framing: False
+[2024-06-26 11:10:09 +0700] [234743] [INFO] Starting gunicorn 22.0.0
+[2024-06-26 11:10:09 +0700] [234743] [DEBUG] Arbiter booted
+[2024-06-26 11:10:09 +0700] [234743] [INFO] Listening at: http://127.0.0.1:9001 (234743)
+[2024-06-26 11:10:09 +0700] [234743] [INFO] Using worker: uvicorn.workers.UvicornWorker
+[2024-06-26 11:10:09 +0700] [234746] [INFO] Booting worker with pid: 234746
+[2024-06-26 11:10:09 +0700] [234747] [INFO] Booting worker with pid: 234747
+[2024-06-26 11:10:09 +0700] [234748] [INFO] Booting worker with pid: 234748
+[2024-06-26 11:10:10 +0700] [234743] [DEBUG] 3 workers
+[2024-06-26 11:10:12 +0700] [234746] [INFO] Started server process [234746]
+[2024-06-26 11:10:12 +0700] [234746] [INFO] Waiting for application startup.
+[2024-06-26 11:10:12 +0700] [234746] [INFO] Application startup complete.
+[2024-06-26 11:10:13 +0700] [234747] [INFO] Started server process [234747]
+[2024-06-26 11:10:13 +0700] [234747] [INFO] Waiting for application startup.
+[2024-06-26 11:10:13 +0700] [234747] [INFO] Application startup complete.
+[2024-06-26 11:10:13 +0700] [234748] [INFO] Started server process [234748]
+[2024-06-26 11:10:13 +0700] [234748] [INFO] Waiting for application startup.
+[2024-06-26 11:10:13 +0700] [234748] [INFO] Application startup complete.
+[2024-06-26 11:14:52 +0700] [234746] [INFO] Worker reloading: /home/intioptima/backend-sosmed/routes/socmed.py modified
+[2024-06-26 11:14:52 +0700] [234747] [INFO] Worker reloading: /home/intioptima/backend-sosmed/routes/socmed.py modified
+[2024-06-26 11:14:52 +0700] [234748] [INFO] Worker reloading: /home/intioptima/backend-sosmed/routes/socmed.py modified
+[2024-06-26 11:14:56 +0700] [234743] [INFO] Handling signal: term
+[2024-06-26 11:14:56 +0700] [234747] [INFO] Shutting down
+[2024-06-26 11:14:56 +0700] [234747] [INFO] Error while closing socket [Errno 9] Bad file descriptor
+[2024-06-26 11:14:56 +0700] [234748] [INFO] Shutting down
+[2024-06-26 11:14:56 +0700] [234748] [INFO] Error while closing socket [Errno 9] Bad file descriptor
+[2024-06-26 11:14:56 +0700] [234746] [INFO] Shutting down
+[2024-06-26 11:14:56 +0700] [234746] [INFO] Error while closing socket [Errno 9] Bad file descriptor
+[2024-06-26 11:14:56 +0700] [234747] [INFO] Waiting for application shutdown.
+[2024-06-26 11:14:56 +0700] [234747] [INFO] Application shutdown complete.
+[2024-06-26 11:14:56 +0700] [234747] [INFO] Finished server process [234747]
+[2024-06-26 11:14:56 +0700] [234743] [ERROR] Worker (pid:234747) was sent SIGTERM!
+[2024-06-26 11:14:56 +0700] [234748] [INFO] Waiting for application shutdown.
+[2024-06-26 11:14:56 +0700] [234748] [INFO] Application shutdown complete.
+[2024-06-26 11:14:56 +0700] [234748] [INFO] Finished server process [234748]
+[2024-06-26 11:14:56 +0700] [234746] [INFO] Waiting for application shutdown.
+[2024-06-26 11:14:56 +0700] [234746] [INFO] Application shutdown complete.
+[2024-06-26 11:14:56 +0700] [234746] [INFO] Finished server process [234746]
+[2024-06-26 11:14:56 +0700] [234743] [ERROR] Worker (pid:234746) was sent SIGTERM!
+[2024-06-26 11:14:56 +0700] [234743] [ERROR] Worker (pid:234748) was sent SIGTERM!
+[2024-06-26 11:14:56 +0700] [234743] [INFO] Shutting down: Master
+[2024-06-26 11:14:56 +0700] [234908] [DEBUG] Current configuration:
+  config: gunicorn.conf.py
+  wsgi_app: None
+  bind: ['127.0.0.1:9001']
+  backlog: 2048
+  workers: 3
+  worker_class: uvicorn.workers.UvicornWorker
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: True
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  print_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /home/intioptima/backend-sosmed
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 1000
+  group: 33
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: /home/intioptima/backend-sosmed/logs/access.log
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: /home/intioptima/backend-sosmed/logs/error.log
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  logconfig_json: None
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: main:app
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7fb666a8bd00>
+  on_reload: <function OnReload.on_reload at 0x7fb666a8be20>
+  when_ready: <function WhenReady.when_ready at 0x7fb666a8bf40>
+  pre_fork: <function Prefork.pre_fork at 0x7fb666ab00d0>
+  post_fork: <function Postfork.post_fork at 0x7fb666ab01f0>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7fb666ab0310>
+  worker_int: <function WorkerInt.worker_int at 0x7fb666ab0430>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7fb666ab0550>
+  pre_exec: <function PreExec.pre_exec at 0x7fb666ab0670>
+  pre_request: <function PreRequest.pre_request at 0x7fb666ab0790>
+  post_request: <function PostRequest.post_request at 0x7fb666ab0820>
+  child_exit: <function ChildExit.child_exit at 0x7fb666ab0940>
+  worker_exit: <function WorkerExit.worker_exit at 0x7fb666ab0a60>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7fb666ab0b80>
+  on_exit: <function OnExit.on_exit at 0x7fb666ab0ca0>
+  ssl_context: <function NewSSLContext.ssl_context at 0x7fb666ab0dc0>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+  permit_unconventional_http_method: False
+  permit_unconventional_http_version: False
+  casefold_http_method: False
+  header_map: drop
+  tolerate_dangerous_framing: False
+[2024-06-26 11:14:56 +0700] [234908] [INFO] Starting gunicorn 22.0.0
+[2024-06-26 11:14:56 +0700] [234908] [DEBUG] Arbiter booted
+[2024-06-26 11:14:56 +0700] [234908] [INFO] Listening at: http://127.0.0.1:9001 (234908)
+[2024-06-26 11:14:56 +0700] [234908] [INFO] Using worker: uvicorn.workers.UvicornWorker
+[2024-06-26 11:14:56 +0700] [234911] [INFO] Booting worker with pid: 234911
+[2024-06-26 11:14:56 +0700] [234912] [INFO] Booting worker with pid: 234912
+[2024-06-26 11:14:56 +0700] [234913] [INFO] Booting worker with pid: 234913
+[2024-06-26 11:14:56 +0700] [234908] [DEBUG] 3 workers
+[2024-06-26 11:14:59 +0700] [234911] [INFO] Started server process [234911]
+[2024-06-26 11:14:59 +0700] [234911] [INFO] Waiting for application startup.
+[2024-06-26 11:14:59 +0700] [234911] [INFO] Application startup complete.
+[2024-06-26 11:14:59 +0700] [234912] [INFO] Started server process [234912]
+[2024-06-26 11:14:59 +0700] [234912] [INFO] Waiting for application startup.
+[2024-06-26 11:14:59 +0700] [234912] [INFO] Application startup complete.
+[2024-06-26 11:14:59 +0700] [234913] [INFO] Started server process [234913]
+[2024-06-26 11:14:59 +0700] [234913] [INFO] Waiting for application startup.
+[2024-06-26 11:14:59 +0700] [234913] [INFO] Application startup complete.
+[2024-06-26 11:38:16 +0700] [234913] [INFO] Worker reloading: /home/intioptima/backend-sosmed/routes/news.py modified
+[2024-06-26 11:38:17 +0700] [234911] [INFO] Worker reloading: /home/intioptima/backend-sosmed/routes/news.py modified
+[2024-06-26 11:38:17 +0700] [234912] [INFO] Worker reloading: /home/intioptima/backend-sosmed/routes/news.py modified
+[2024-06-26 11:39:43 +0700] [234908] [INFO] Handling signal: term
+[2024-06-26 11:39:43 +0700] [234911] [INFO] Shutting down
+[2024-06-26 11:39:43 +0700] [234911] [INFO] Error while closing socket [Errno 9] Bad file descriptor
+[2024-06-26 11:39:43 +0700] [234913] [INFO] Shutting down
+[2024-06-26 11:39:43 +0700] [234913] [INFO] Error while closing socket [Errno 9] Bad file descriptor
+[2024-06-26 11:39:43 +0700] [234912] [INFO] Shutting down
+[2024-06-26 11:39:43 +0700] [234912] [INFO] Error while closing socket [Errno 9] Bad file descriptor
+[2024-06-26 11:39:43 +0700] [234911] [INFO] Waiting for application shutdown.
+[2024-06-26 11:39:43 +0700] [234911] [INFO] Application shutdown complete.
+[2024-06-26 11:39:43 +0700] [234911] [INFO] Finished server process [234911]
+[2024-06-26 11:39:43 +0700] [234913] [INFO] Waiting for application shutdown.
+[2024-06-26 11:39:43 +0700] [234913] [INFO] Application shutdown complete.
+[2024-06-26 11:39:43 +0700] [234913] [INFO] Finished server process [234913]
+[2024-06-26 11:39:43 +0700] [234908] [ERROR] Worker (pid:234913) was sent SIGTERM!
+[2024-06-26 11:39:43 +0700] [234908] [ERROR] Worker (pid:234911) was sent SIGTERM!
+[2024-06-26 11:39:43 +0700] [234912] [INFO] Waiting for application shutdown.
+[2024-06-26 11:39:43 +0700] [234912] [INFO] Application shutdown complete.
+[2024-06-26 11:39:43 +0700] [234912] [INFO] Finished server process [234912]
+[2024-06-26 11:39:43 +0700] [234908] [ERROR] Worker (pid:234912) was sent SIGTERM!
+[2024-06-26 11:39:43 +0700] [234908] [INFO] Shutting down: Master
+[2024-06-26 11:39:43 +0700] [235418] [DEBUG] Current configuration:
+  config: gunicorn.conf.py
+  wsgi_app: None
+  bind: ['127.0.0.1:9001']
+  backlog: 2048
+  workers: 3
+  worker_class: uvicorn.workers.UvicornWorker
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: True
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  print_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /home/intioptima/backend-sosmed
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 1000
+  group: 33
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: /home/intioptima/backend-sosmed/logs/access.log
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: /home/intioptima/backend-sosmed/logs/error.log
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  logconfig_json: None
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: main:app
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7fe08862bd00>
+  on_reload: <function OnReload.on_reload at 0x7fe08862be20>
+  when_ready: <function WhenReady.when_ready at 0x7fe08862bf40>
+  pre_fork: <function Prefork.pre_fork at 0x7fe0886500d0>
+  post_fork: <function Postfork.post_fork at 0x7fe0886501f0>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7fe088650310>
+  worker_int: <function WorkerInt.worker_int at 0x7fe088650430>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7fe088650550>
+  pre_exec: <function PreExec.pre_exec at 0x7fe088650670>
+  pre_request: <function PreRequest.pre_request at 0x7fe088650790>
+  post_request: <function PostRequest.post_request at 0x7fe088650820>
+  child_exit: <function ChildExit.child_exit at 0x7fe088650940>
+  worker_exit: <function WorkerExit.worker_exit at 0x7fe088650a60>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7fe088650b80>
+  on_exit: <function OnExit.on_exit at 0x7fe088650ca0>
+  ssl_context: <function NewSSLContext.ssl_context at 0x7fe088650dc0>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+  permit_unconventional_http_method: False
+  permit_unconventional_http_version: False
+  casefold_http_method: False
+  header_map: drop
+  tolerate_dangerous_framing: False
+[2024-06-26 11:39:43 +0700] [235418] [INFO] Starting gunicorn 22.0.0
+[2024-06-26 11:39:43 +0700] [235418] [DEBUG] Arbiter booted
+[2024-06-26 11:39:43 +0700] [235418] [INFO] Listening at: http://127.0.0.1:9001 (235418)
+[2024-06-26 11:39:43 +0700] [235418] [INFO] Using worker: uvicorn.workers.UvicornWorker
+[2024-06-26 11:39:43 +0700] [235421] [INFO] Booting worker with pid: 235421
+[2024-06-26 11:39:43 +0700] [235422] [INFO] Booting worker with pid: 235422
+[2024-06-26 11:39:43 +0700] [235423] [INFO] Booting worker with pid: 235423
+[2024-06-26 11:39:43 +0700] [235418] [DEBUG] 3 workers
+[2024-06-26 11:39:46 +0700] [235421] [INFO] Started server process [235421]
+[2024-06-26 11:39:46 +0700] [235421] [INFO] Waiting for application startup.
+[2024-06-26 11:39:46 +0700] [235421] [INFO] Application startup complete.
+[2024-06-26 11:39:46 +0700] [235422] [INFO] Started server process [235422]
+[2024-06-26 11:39:46 +0700] [235422] [INFO] Waiting for application startup.
+[2024-06-26 11:39:46 +0700] [235422] [INFO] Application startup complete.
+[2024-06-26 11:39:46 +0700] [235423] [INFO] Started server process [235423]
+[2024-06-26 11:39:46 +0700] [235423] [INFO] Waiting for application startup.
+[2024-06-26 11:39:46 +0700] [235423] [INFO] Application startup complete.
+[2024-06-26 12:08:40 +0700] [235421] [INFO] Worker reloading: /home/intioptima/backend-sosmed/routes/news.py modified
+[2024-06-26 12:08:40 +0700] [235422] [INFO] Worker reloading: /home/intioptima/backend-sosmed/routes/news.py modified
+[2024-06-26 12:08:40 +0700] [235423] [INFO] Worker reloading: /home/intioptima/backend-sosmed/routes/news.py modified
+[2024-06-26 13:18:59 +0700] [235418] [INFO] Handling signal: term
+[2024-06-26 13:18:59 +0700] [235421] [INFO] Shutting down
+[2024-06-26 13:18:59 +0700] [235422] [INFO] Shutting down
+[2024-06-26 13:18:59 +0700] [235421] [INFO] Error while closing socket [Errno 9] Bad file descriptor
+[2024-06-26 13:18:59 +0700] [235423] [INFO] Shutting down
+[2024-06-26 13:18:59 +0700] [235422] [INFO] Error while closing socket [Errno 9] Bad file descriptor
+[2024-06-26 13:18:59 +0700] [235423] [INFO] Error while closing socket [Errno 9] Bad file descriptor
+[2024-06-26 13:18:59 +0700] [235421] [INFO] Waiting for application shutdown.
+[2024-06-26 13:18:59 +0700] [235421] [INFO] Application shutdown complete.
+[2024-06-26 13:18:59 +0700] [235422] [INFO] Waiting for application shutdown.
+[2024-06-26 13:18:59 +0700] [235421] [INFO] Finished server process [235421]
+[2024-06-26 13:18:59 +0700] [235423] [INFO] Waiting for application shutdown.
+[2024-06-26 13:18:59 +0700] [235423] [INFO] Application shutdown complete.
+[2024-06-26 13:18:59 +0700] [235423] [INFO] Finished server process [235423]
+[2024-06-26 13:18:59 +0700] [235422] [INFO] Application shutdown complete.
+[2024-06-26 13:18:59 +0700] [235422] [INFO] Finished server process [235422]
+[2024-06-26 13:18:59 +0700] [235418] [ERROR] Worker (pid:235423) was sent SIGTERM!
+[2024-06-26 13:18:59 +0700] [235418] [ERROR] Worker (pid:235421) was sent SIGTERM!
+[2024-06-26 13:18:59 +0700] [235418] [ERROR] Worker (pid:235422) was sent SIGTERM!
+[2024-06-26 13:18:59 +0700] [235418] [INFO] Shutting down: Master
+[2024-06-26 13:19:00 +0700] [239672] [DEBUG] Current configuration:
+  config: gunicorn.conf.py
+  wsgi_app: None
+  bind: ['127.0.0.1:9001']
+  backlog: 2048
+  workers: 3
+  worker_class: uvicorn.workers.UvicornWorker
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: True
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  print_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /home/intioptima/backend-sosmed
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 1000
+  group: 33
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: /home/intioptima/backend-sosmed/logs/access.log
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: /home/intioptima/backend-sosmed/logs/error.log
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  logconfig_json: None
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: main:app
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7fa0e3d13d00>
+  on_reload: <function OnReload.on_reload at 0x7fa0e3d13e20>
+  when_ready: <function WhenReady.when_ready at 0x7fa0e3d13f40>
+  pre_fork: <function Prefork.pre_fork at 0x7fa0e3d380d0>
+  post_fork: <function Postfork.post_fork at 0x7fa0e3d381f0>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7fa0e3d38310>
+  worker_int: <function WorkerInt.worker_int at 0x7fa0e3d38430>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7fa0e3d38550>
+  pre_exec: <function PreExec.pre_exec at 0x7fa0e3d38670>
+  pre_request: <function PreRequest.pre_request at 0x7fa0e3d38790>
+  post_request: <function PostRequest.post_request at 0x7fa0e3d38820>
+  child_exit: <function ChildExit.child_exit at 0x7fa0e3d38940>
+  worker_exit: <function WorkerExit.worker_exit at 0x7fa0e3d38a60>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7fa0e3d38b80>
+  on_exit: <function OnExit.on_exit at 0x7fa0e3d38ca0>
+  ssl_context: <function NewSSLContext.ssl_context at 0x7fa0e3d38dc0>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+  permit_unconventional_http_method: False
+  permit_unconventional_http_version: False
+  casefold_http_method: False
+  header_map: drop
+  tolerate_dangerous_framing: False
+[2024-06-26 13:19:00 +0700] [239672] [INFO] Starting gunicorn 22.0.0
+[2024-06-26 13:19:00 +0700] [239672] [DEBUG] Arbiter booted
+[2024-06-26 13:19:00 +0700] [239672] [INFO] Listening at: http://127.0.0.1:9001 (239672)
+[2024-06-26 13:19:00 +0700] [239672] [INFO] Using worker: uvicorn.workers.UvicornWorker
+[2024-06-26 13:19:00 +0700] [239694] [INFO] Booting worker with pid: 239694
+[2024-06-26 13:19:00 +0700] [239695] [INFO] Booting worker with pid: 239695
+[2024-06-26 13:19:00 +0700] [239696] [INFO] Booting worker with pid: 239696
+[2024-06-26 13:19:00 +0700] [239672] [DEBUG] 3 workers
+[2024-06-26 13:19:04 +0700] [239694] [INFO] Started server process [239694]
+[2024-06-26 13:19:04 +0700] [239694] [INFO] Waiting for application startup.
+[2024-06-26 13:19:04 +0700] [239694] [INFO] Application startup complete.
+[2024-06-26 13:19:04 +0700] [239696] [INFO] Started server process [239696]
+[2024-06-26 13:19:04 +0700] [239696] [INFO] Waiting for application startup.
+[2024-06-26 13:19:04 +0700] [239696] [INFO] Application startup complete.
+[2024-06-26 13:19:04 +0700] [239695] [INFO] Started server process [239695]
+[2024-06-26 13:19:04 +0700] [239695] [INFO] Waiting for application startup.
+[2024-06-26 13:19:04 +0700] [239695] [INFO] Application startup complete.
+[2024-06-26 13:21:14 +0700] [239672] [INFO] Handling signal: term
+[2024-06-26 13:21:14 +0700] [239695] [INFO] Shutting down
+[2024-06-26 13:21:14 +0700] [239695] [INFO] Error while closing socket [Errno 9] Bad file descriptor
+[2024-06-26 13:21:14 +0700] [239696] [INFO] Shutting down
+[2024-06-26 13:21:14 +0700] [239696] [INFO] Error while closing socket [Errno 9] Bad file descriptor
+[2024-06-26 13:21:14 +0700] [239694] [INFO] Shutting down
+[2024-06-26 13:21:14 +0700] [239694] [INFO] Error while closing socket [Errno 9] Bad file descriptor
+[2024-06-26 13:21:14 +0700] [239695] [INFO] Waiting for application shutdown.
+[2024-06-26 13:21:14 +0700] [239695] [INFO] Application shutdown complete.
+[2024-06-26 13:21:14 +0700] [239695] [INFO] Finished server process [239695]
+[2024-06-26 13:21:14 +0700] [239696] [INFO] Waiting for application shutdown.
+[2024-06-26 13:21:14 +0700] [239696] [INFO] Application shutdown complete.
+[2024-06-26 13:21:14 +0700] [239696] [INFO] Finished server process [239696]
+[2024-06-26 13:21:14 +0700] [239672] [ERROR] Worker (pid:239695) was sent SIGTERM!
+[2024-06-26 13:21:14 +0700] [239672] [ERROR] Worker (pid:239696) was sent SIGTERM!
+[2024-06-26 13:21:14 +0700] [239694] [INFO] Waiting for application shutdown.
+[2024-06-26 13:21:14 +0700] [239694] [INFO] Application shutdown complete.
+[2024-06-26 13:21:14 +0700] [239694] [INFO] Finished server process [239694]
+[2024-06-26 13:21:14 +0700] [239672] [ERROR] Worker (pid:239694) was sent SIGTERM!
+[2024-06-26 13:21:14 +0700] [239672] [INFO] Shutting down: Master
+[2024-06-26 13:22:09 +0700] [240439] [DEBUG] Current configuration:
+  config: gunicorn.conf.py
+  wsgi_app: None
+  bind: ['127.0.0.1:9001']
+  backlog: 2048
+  workers: 3
+  worker_class: uvicorn.workers.UvicornWorker
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: True
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  print_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /home/intioptima/backend-sosmed
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 1000
+  group: 33
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: /home/intioptima/backend-sosmed/logs/access.log
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: /home/intioptima/backend-sosmed/logs/error.log
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  logconfig_json: None
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: main:app
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7f6ac9677d00>
+  on_reload: <function OnReload.on_reload at 0x7f6ac9677e20>
+  when_ready: <function WhenReady.when_ready at 0x7f6ac9677f40>
+  pre_fork: <function Prefork.pre_fork at 0x7f6ac969c0d0>
+  post_fork: <function Postfork.post_fork at 0x7f6ac969c1f0>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7f6ac969c310>
+  worker_int: <function WorkerInt.worker_int at 0x7f6ac969c430>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7f6ac969c550>
+  pre_exec: <function PreExec.pre_exec at 0x7f6ac969c670>
+  pre_request: <function PreRequest.pre_request at 0x7f6ac969c790>
+  post_request: <function PostRequest.post_request at 0x7f6ac969c820>
+  child_exit: <function ChildExit.child_exit at 0x7f6ac969c940>
+  worker_exit: <function WorkerExit.worker_exit at 0x7f6ac969ca60>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7f6ac969cb80>
+  on_exit: <function OnExit.on_exit at 0x7f6ac969cca0>
+  ssl_context: <function NewSSLContext.ssl_context at 0x7f6ac969cdc0>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+  permit_unconventional_http_method: False
+  permit_unconventional_http_version: False
+  casefold_http_method: False
+  header_map: drop
+  tolerate_dangerous_framing: False
+[2024-06-26 13:22:09 +0700] [240439] [INFO] Starting gunicorn 22.0.0
+[2024-06-26 13:22:09 +0700] [240439] [DEBUG] Arbiter booted
+[2024-06-26 13:22:09 +0700] [240439] [INFO] Listening at: http://127.0.0.1:9001 (240439)
+[2024-06-26 13:22:09 +0700] [240439] [INFO] Using worker: uvicorn.workers.UvicornWorker
+[2024-06-26 13:22:09 +0700] [240441] [INFO] Booting worker with pid: 240441
+[2024-06-26 13:22:09 +0700] [240442] [INFO] Booting worker with pid: 240442
+[2024-06-26 13:22:09 +0700] [240443] [INFO] Booting worker with pid: 240443
+[2024-06-26 13:22:09 +0700] [240439] [DEBUG] 3 workers
+[2024-06-26 13:22:12 +0700] [240443] [INFO] Started server process [240443]
+[2024-06-26 13:22:12 +0700] [240443] [INFO] Waiting for application startup.
+[2024-06-26 13:22:12 +0700] [240443] [INFO] Application startup complete.
+[2024-06-26 13:22:12 +0700] [240442] [INFO] Started server process [240442]
+[2024-06-26 13:22:12 +0700] [240442] [INFO] Waiting for application startup.
+[2024-06-26 13:22:12 +0700] [240442] [INFO] Application startup complete.
+[2024-06-26 13:22:12 +0700] [240441] [INFO] Started server process [240441]
+[2024-06-26 13:22:12 +0700] [240441] [INFO] Waiting for application startup.
+[2024-06-26 13:22:12 +0700] [240441] [INFO] Application startup complete.
+[2024-06-26 13:23:50 +0700] [240439] [INFO] Handling signal: term
+[2024-06-26 13:23:50 +0700] [240442] [INFO] Shutting down
+[2024-06-26 13:23:50 +0700] [240442] [INFO] Error while closing socket [Errno 9] Bad file descriptor
+[2024-06-26 13:23:50 +0700] [240441] [INFO] Shutting down
+[2024-06-26 13:23:50 +0700] [240441] [INFO] Error while closing socket [Errno 9] Bad file descriptor
+[2024-06-26 13:23:50 +0700] [240443] [INFO] Shutting down
+[2024-06-26 13:23:50 +0700] [240443] [INFO] Error while closing socket [Errno 9] Bad file descriptor
+[2024-06-26 13:23:50 +0700] [240442] [INFO] Waiting for application shutdown.
+[2024-06-26 13:23:50 +0700] [240442] [INFO] Application shutdown complete.
+[2024-06-26 13:23:50 +0700] [240442] [INFO] Finished server process [240442]
+[2024-06-26 13:23:50 +0700] [240441] [INFO] Waiting for application shutdown.
+[2024-06-26 13:23:50 +0700] [240441] [INFO] Application shutdown complete.
+[2024-06-26 13:23:50 +0700] [240441] [INFO] Finished server process [240441]
+[2024-06-26 13:23:50 +0700] [240439] [ERROR] Worker (pid:240442) was sent SIGTERM!
+[2024-06-26 13:23:50 +0700] [240439] [ERROR] Worker (pid:240441) was sent SIGTERM!
+[2024-06-26 13:23:50 +0700] [240443] [INFO] Waiting for application shutdown.
+[2024-06-26 13:23:50 +0700] [240443] [INFO] Application shutdown complete.
+[2024-06-26 13:23:50 +0700] [240443] [INFO] Finished server process [240443]
+[2024-06-26 13:23:50 +0700] [240439] [ERROR] Worker (pid:240443) was sent SIGTERM!
+[2024-06-26 13:23:50 +0700] [240439] [INFO] Shutting down: Master
+[2024-06-28 16:10:39 +0700] [772] [DEBUG] Current configuration:
+  config: gunicorn.conf.py
+  wsgi_app: None
+  bind: ['127.0.0.1:9001']
+  backlog: 2048
+  workers: 3
+  worker_class: uvicorn.workers.UvicornWorker
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: True
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  print_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /home/intioptima/backend-sosmed
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 1000
+  group: 33
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: /home/intioptima/backend-sosmed/logs/access.log
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: /home/intioptima/backend-sosmed/logs/error.log
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  logconfig_json: None
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: main:app
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7f0fd104fd00>
+  on_reload: <function OnReload.on_reload at 0x7f0fd104fe20>
+  when_ready: <function WhenReady.when_ready at 0x7f0fd104ff40>
+  pre_fork: <function Prefork.pre_fork at 0x7f0fd10740d0>
+  post_fork: <function Postfork.post_fork at 0x7f0fd10741f0>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7f0fd1074310>
+  worker_int: <function WorkerInt.worker_int at 0x7f0fd1074430>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7f0fd1074550>
+  pre_exec: <function PreExec.pre_exec at 0x7f0fd1074670>
+  pre_request: <function PreRequest.pre_request at 0x7f0fd1074790>
+  post_request: <function PostRequest.post_request at 0x7f0fd1074820>
+  child_exit: <function ChildExit.child_exit at 0x7f0fd1074940>
+  worker_exit: <function WorkerExit.worker_exit at 0x7f0fd1074a60>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7f0fd1074b80>
+  on_exit: <function OnExit.on_exit at 0x7f0fd1074ca0>
+  ssl_context: <function NewSSLContext.ssl_context at 0x7f0fd1074dc0>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+  permit_unconventional_http_method: False
+  permit_unconventional_http_version: False
+  casefold_http_method: False
+  header_map: drop
+  tolerate_dangerous_framing: False
+[2024-06-28 16:10:39 +0700] [772] [INFO] Starting gunicorn 22.0.0
+[2024-06-28 16:10:39 +0700] [772] [DEBUG] Arbiter booted
+[2024-06-28 16:10:39 +0700] [772] [INFO] Listening at: http://127.0.0.1:9001 (772)
+[2024-06-28 16:10:39 +0700] [772] [INFO] Using worker: uvicorn.workers.UvicornWorker
+[2024-06-28 16:10:39 +0700] [899] [INFO] Booting worker with pid: 899
+[2024-06-28 16:10:39 +0700] [902] [INFO] Booting worker with pid: 902
+[2024-06-28 16:10:39 +0700] [903] [INFO] Booting worker with pid: 903
+[2024-06-28 16:10:39 +0700] [772] [DEBUG] 3 workers
+[2024-06-28 16:10:52 +0700] [902] [INFO] Started server process [902]
+[2024-06-28 16:10:52 +0700] [902] [INFO] Waiting for application startup.
+[2024-06-28 16:10:52 +0700] [903] [INFO] Started server process [903]
+[2024-06-28 16:10:52 +0700] [903] [INFO] Waiting for application startup.
+[2024-06-28 16:10:52 +0700] [903] [INFO] Application startup complete.
+[2024-06-28 16:10:52 +0700] [902] [INFO] Application startup complete.
+[2024-06-28 16:10:52 +0700] [899] [INFO] Started server process [899]
+[2024-06-28 16:10:52 +0700] [899] [INFO] Waiting for application startup.
+[2024-06-28 16:10:52 +0700] [899] [INFO] Application startup complete.
+[2024-07-01 12:45:21 +0700] [903] [INFO] Worker reloading: /home/intioptima/backend-sosmed/api/routes/news.py modified
+[2024-07-01 12:45:21 +0700] [902] [INFO] Worker reloading: /home/intioptima/backend-sosmed/api/routes/news.py modified
+[2024-07-01 12:45:21 +0700] [899] [INFO] Worker reloading: /home/intioptima/backend-sosmed/api/routes/news.py modified
+[2024-07-02 14:18:28 +0700] [772] [CRITICAL] WORKER TIMEOUT (pid:899)
+[2024-07-02 14:18:53 +0700] [772] [CRITICAL] WORKER TIMEOUT (pid:902)
+[2024-07-02 14:19:29 +0700] [772] [CRITICAL] WORKER TIMEOUT (pid:903)
+[2024-07-02 14:19:43 +0700] [772] [ERROR] Worker (pid:902) was sent SIGKILL! Perhaps out of memory?
+[2024-07-02 14:19:43 +0700] [772] [ERROR] Worker (pid:903) was sent SIGKILL! Perhaps out of memory?
+[2024-07-02 14:19:43 +0700] [772] [ERROR] Worker (pid:899) was sent SIGKILL! Perhaps out of memory?
+[2024-07-02 14:19:43 +0700] [99811] [INFO] Booting worker with pid: 99811
+[2024-07-02 14:19:43 +0700] [99816] [INFO] Booting worker with pid: 99816
+[2024-07-02 14:19:43 +0700] [99818] [INFO] Booting worker with pid: 99818
+[2024-07-02 14:19:58 +0700] [99818] [INFO] Started server process [99818]
+[2024-07-02 14:19:58 +0700] [99811] [INFO] Started server process [99811]
+[2024-07-02 14:19:58 +0700] [99818] [INFO] Waiting for application startup.
+[2024-07-02 14:19:58 +0700] [99811] [INFO] Waiting for application startup.
+[2024-07-02 14:19:58 +0700] [99818] [INFO] Application startup complete.
+[2024-07-02 14:19:58 +0700] [99811] [INFO] Application startup complete.
+[2024-07-02 14:19:58 +0700] [99816] [INFO] Started server process [99816]
+[2024-07-02 14:19:58 +0700] [99816] [INFO] Waiting for application startup.
+[2024-07-02 14:19:58 +0700] [99816] [INFO] Application startup complete.
+[2024-07-02 14:20:45 +0700] [772] [CRITICAL] WORKER TIMEOUT (pid:99818)
+[2024-07-02 14:20:53 +0700] [772] [CRITICAL] WORKER TIMEOUT (pid:99816)
+[2024-07-02 14:21:11 +0700] [772] [ERROR] Worker (pid:99816) was sent SIGKILL! Perhaps out of memory?
+[2024-07-02 14:21:11 +0700] [100333] [INFO] Booting worker with pid: 100333
+[2024-07-02 14:21:13 +0700] [772] [ERROR] Worker (pid:99818) was sent code 134!
+[2024-07-02 14:21:13 +0700] [100356] [INFO] Booting worker with pid: 100356
+[2024-07-02 14:22:02 +0700] [100356] [INFO] Started server process [100356]
+[2024-07-02 14:22:02 +0700] [100333] [INFO] Started server process [100333]
+[2024-07-02 14:22:02 +0700] [100356] [INFO] Waiting for application startup.
+[2024-07-02 14:22:02 +0700] [100333] [INFO] Waiting for application startup.
+[2024-07-02 14:22:02 +0700] [100356] [INFO] Application startup complete.
+[2024-07-02 14:22:02 +0700] [100333] [INFO] Application startup complete.
+[2024-07-03 08:56:56 +0700] [100333] [INFO] Worker reloading: /home/intioptima/backend-sosmed/api/routes/socmed.py modified
+[2024-07-03 08:56:56 +0700] [100356] [INFO] Worker reloading: /home/intioptima/backend-sosmed/api/routes/socmed.py modified
+[2024-07-03 08:56:56 +0700] [99811] [INFO] Worker reloading: /home/intioptima/backend-sosmed/api/routes/socmed.py modified

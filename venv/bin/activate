@@ -38,7 +38,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="/home/ilahazs/Projects/Work/backend-sosmed/venv"
+VIRTUAL_ENV="/home/intioptima/backend-sosmed/venv"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"

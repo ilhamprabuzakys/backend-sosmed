@@ -1,27 +1,30 @@
-from typing import Union
-
 from fastapi import FastAPI
-from pydantic import BaseModel
+from fastapi.responses import RedirectResponse
+from fastapi.middleware.cors import CORSMiddleware
 
-app = FastAPI()
+from config import settings
+from api.main import api_router
 
+app = FastAPI(
+    title=settings.APP_NAME,
+    description=settings.APP_DESCRIPTION,
+)
 
-class Item(BaseModel):
-    name: str
-    price: float
-    is_offer: Union[bool, None] = None
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=settings.CORS_ALLOW_ORIGINS,
+    allow_credentials=settings.CORS_ALLOW_CREDENTIALS,
+    allow_methods=settings.CORS_ALLOW_METHODS,
+    allow_headers=settings.CORS_ALLOW_HEADERS,
+)
 
+app.include_router(api_router, prefix=settings.API_PREFIX)
 
 @app.get("/")
-def read_root():
-    return {"Hello": "World"}
+def get_root():
+    return RedirectResponse(url="/docs")
 
+@app.get("/api")
+def get_api():
+    return RedirectResponse(url="/docs")
 
-@app.get("/items/{item_id}")
-def read_item(item_id: int, q: Union[str, None] = None):
-    return {"item_id": item_id, "q": q}
-
-
-@app.put("/items/{item_id}")
-def update_item(item_id: int, item: Item):
-    return {"item_name": item.name, "item_id": item_id}
